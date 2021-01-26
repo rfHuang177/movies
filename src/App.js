@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./TMDB-logo.svg";
+import "./Components/App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import DetailPage from "./Components/DetailPage";
+import Home from "./Components/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="page-content">
+        <div className="title-container">
+          <img src={logo} className="main-icon" alt="TMDB LOGO" />
+          <ul className="home-liked-container">
+            <li className="HOME">
+              <Link to="/">HOME</Link>
+            </li>
+            <li className="LIKED LIST">
+              <Link to="/LIKEDLIST">LIKED LIST</Link>
+            </li>
+          </ul>
+        </div>
+
+        <Route exact path="/" component={Home} />
+        <Route exact path="/detail/:id" component={DetailPage} />
+      </div>
+    </Router>
   );
 }
 
