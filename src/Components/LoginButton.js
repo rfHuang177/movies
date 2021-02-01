@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 export default function LoginButton() {
   const logOut = () => {
     localStorage.removeItem("username");
+    localStorage.removeItem("session_id");
     window.location.reload();
   };
   const userName = localStorage.getItem("username");

@@ -56,13 +56,16 @@ function Login() {
     ).then((res) => res.json());
     localStorage.setItem("session_id", session_id);
     localStorage.setItem("username", JSON.stringify(account.username));
+    localStorage.setItem("userid", JSON.stringify(account.id));
     console.log(session_id);
     console.log(account);
+    console.log(account.id);
     if (account.username === username) {
       alert("logged in");
       history.push("/");
       window.location.reload();
     } else {
+      alert("failed to log in");
       console.log("didn't log in");
     }
   };
