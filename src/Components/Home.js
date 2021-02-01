@@ -1,4 +1,3 @@
-import logo from "../TMDB-logo.svg";
 import "./App.css";
 import { useState, useEffect } from "react";
 import Card from "./Card";
@@ -13,13 +12,24 @@ function Home() {
 
   const url = `${BASE_URL}/${category}?api_key=${API_KEY}&page=${page}`;
 
-  useEffect(() => {
+  useEffect(async () => {
     fetch(url)
       .then((res) => res.json())
       .then((res) => {
         setMovies(res.results);
       });
   }, [page, category]);
+
+  const sessionId = localStorage.getItem("session_id");
+  const userName = localStorage.getItem("username");
+
+  console.log(userName);
+  //   login steps:
+  // 1. Use apiKey to get a request token from https://api.themoviedb.org/3/authentication/token/new . Get the "requestToken" from the response body
+  // 2. Use user's username & password and the "requestToken" to query the https://api.themoviedb.org/3/authentication/token/validate_with_login to validate the request
+  // 3. Use the requestToken again to query the https://api.themoviedb.org/3/authentication/session/new. Get the "session_id" from the respose body
+  // 4. Use the apiKey & session_id to query the https://api.themoviedb.org/3/account. Get the account details and store the account ID
+  // 5. Use session_id & apiKey for other API queries
 
   return (
     <>

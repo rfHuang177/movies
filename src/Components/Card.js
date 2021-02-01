@@ -27,7 +27,7 @@ export default function Card({ id, title, voteAverage, posterPath }) {
             <span>{voteAverage}</span>
           </div>
           <div>
-            <AiTwotoneHeart className="like-icon"></AiTwotoneHeart>
+            <AiTwotoneHeart className="like-icon" id={id}></AiTwotoneHeart>
           </div>
         </div>
       </div>
