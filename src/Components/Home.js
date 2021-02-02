@@ -1,13 +1,11 @@
-import "./App.css";
-import { useState, useEffect } from "react";
-import Card from "./Card";
-
-const BASE_URL = "https://api.themoviedb.org/3/movie";
-const API_KEY = "391415faa44f91d2b92477a8db1e4c22";
+import './App.css';
+import { useState, useEffect } from 'react';
+import Card from './Card';
+import { BASE_URL, API_KEY } from './constant';
 
 function Home() {
   const [page, setPage] = useState(1);
-  const [category, setCategory] = useState("popular");
+  const [category, setCategory] = useState('popular');
   const [movies, setMovies] = useState([]);
 
   const url = `${BASE_URL}/${category}?api_key=${API_KEY}&page=${page}`;
@@ -19,11 +17,6 @@ function Home() {
         setMovies(res.results);
       });
   }, [page, category]);
-
-  const sessionId = localStorage.getItem("session_id");
-  const userName = localStorage.getItem("username");
-
-  console.log(userName);
   //   login steps:
   // 1. Use apiKey to get a request token from https://api.themoviedb.org/3/authentication/token/new . Get the "requestToken" from the response body
   // 2. Use user's username & password and the "requestToken" to query the https://api.themoviedb.org/3/authentication/token/validate_with_login to validate the request

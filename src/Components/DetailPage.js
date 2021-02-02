@@ -1,22 +1,20 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import Card from "./Card";
-import Genres from "./Genres";
-import "./App.css";
-const BASE_URL = "https://api.themoviedb.org/3/movie";
-const API_KEY = "391415faa44f91d2b92477a8db1e4c22";
-const IMG_SRC_BASE = `https://image.tmdb.org/t/p/w500`;
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import Card from './Card';
+import Genres from './Genres';
+import './App.css';
+import { BASE_URL, API_KEY, IMG_SRC_BASE } from './constant';
 
 function DetailPage() {
   const [vote, setVote] = useState(0);
-  const [movie, setMovie] = useState("");
+  const [movie, setMovie] = useState('');
 
   const params = useParams();
   const movieId = params.id;
 
   useEffect(() => {
     fetch(`${BASE_URL}/${movieId}?api_key=${API_KEY}&language=en-US`, {
-      method: "get",
+      method: 'get',
     })
       .then((resp) => resp.json())
       .then((resp) => {
@@ -30,7 +28,6 @@ function DetailPage() {
   return (
     <div>
       <h3>{movie.original_title}</h3>
-
       <div>
         <img className="detail-poster" src={imgSrc} alt="no image" />
       </div>

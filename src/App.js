@@ -5,6 +5,7 @@ import DetailPage from "./Components/DetailPage";
 import Home from "./Components/Home";
 import Login from "./Components/Login";
 import LoginButton from "./Components/LoginButton";
+import LikedPage from "./Components/LikedPage";
 
 function App() {
   const userName = localStorage.getItem("username");
@@ -33,7 +34,7 @@ function App() {
 
         <Route exact path="/" component={Home} />
         <Route exact path="/detail/:id" component={DetailPage} />
-        {/* <Route exact path="/LIKEDLIST" component={LikedPage} /> */}
+        <Route exact path="/LIKEDLIST" component={LikedPage} />
         <Route exact path="/log-in" component={Login} />
       </div>
     </Router>

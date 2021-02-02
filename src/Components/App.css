@@ -70,21 +70,6 @@ button {
   border-radius: 15px;
 }
 
-.like-icon {
-  color: #01b4e4;
-
-  /* padding: 5px 10px;
-  font-size: 12px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: red;
-  border: none;
-  border-radius: 15px; */
-}
-
 .page-count-container {
   display: flex;
   margin: 0;
@@ -97,13 +82,13 @@ button {
   color: #01b4e4;
 }
 
+.like-icon {
+  color: #01b4e4;
+}
+
 .like-icon:hover {
   color: red;
 }
-
-/* .like-icon:hover {
-  color: red;
-} */
 
 .like-icon:active {
   color: #01b4e4;
@@ -112,6 +97,23 @@ button {
 
 .like-icon:active {
   color: red;
+  transform: translateY(4px);
+}
+.liked-icon {
+  color: red;
+}
+
+.liked-icon:hover {
+  color: #01b4e4;
+}
+
+.liked-icon:active {
+  color: red;
+  transform: translateY(4px);
+}
+
+.liked-icon:active {
+  color: #01b4e4;
   transform: translateY(4px);
 }
 
