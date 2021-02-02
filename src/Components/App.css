@@ -84,14 +84,10 @@ button {
 
 .like-icon {
   color: #01b4e4;
-}
-
-.like-icon:hover {
-  color: red;
+  cursor: pointer;
 }
 
 .like-icon:active {
-  color: #01b4e4;
   transform: translateY(4px);
 }
 
@@ -101,19 +97,14 @@ button {
 }
 .liked-icon {
   color: red;
-}
-
-.liked-icon:hover {
-  color: #01b4e4;
+  cursor: pointer;
 }
 
 .liked-icon:active {
-  color: red;
   transform: translateY(4px);
 }
 
 .liked-icon:active {
-  color: #01b4e4;
   transform: translateY(4px);
 }
 

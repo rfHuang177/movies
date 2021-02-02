@@ -1,6 +1,8 @@
 import logo from "./TMDB-logo.svg";
 import "./Components/App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import DetailPage from "./Components/DetailPage";
 import Home from "./Components/Home";
 import Login from "./Components/Login";
@@ -37,6 +39,7 @@ function App() {
         <Route exact path="/LIKEDLIST" component={LikedPage} />
         <Route exact path="/log-in" component={Login} />
       </div>
+      <ToastContainer />
     </Router>
   );
 }
